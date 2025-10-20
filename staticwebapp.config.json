@@ -1,6 +1,17 @@
 {
-    "navigationFallback": {
-      "rewrite": "index.html",
-      "exclude": ["*.{png,jpg,gif,svg}", "*.css"]
-    }
+  "navigationFallback": {
+    "rewrite": "index.html",
+    "exclude": ["*.{png,jpg,gif,svg}", "*.css"]
+  },
+  "networking": {
+  "allowedIpRanges": ["AzureFrontDoor.Backend"]
+  },
+  "forwardingGateway": {
+    "requiredHeaders": {
+      "X-Azure-FDID" : "d50c55da-92d1-4471-95f6-7cd6cdbb65f8"
+    },
+    "allowedForwardedHosts": [
+      "gi-frontdoor-cteyfjbqadgqgqet.b02.azurefd.net"
+    ]
+  }
 }
